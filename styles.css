@@ -1,0 +1,149 @@
+/* ===== Color palette ===== */
+:root {
+  --page-bg:        #ffe6f2; /* light pink page background */
+  --bar-bg:         #e9d5ff; /* light purple header/footer/nav */
+  --nav-bg:         #c084fc; /* brighter purple for nav bar */
+  --main-bg:        #fffde7; /* very light yellow main content */
+  --main-border:    #facc15; /* yellow border */
+
+  --sidebar-bg:     #f3e8ff; /* light purple sidebar */
+  --sidebar-hover:  #e9d5ff; /* hover purple for sidebar */
+
+  --footer-green:   #d1fae5; /* soft light green for footer */
+  --pink-border:    #fb7185; /* stronger pink accent for borders */
+
+  --text:           #111;
+  --link:           #3b0764;
+}
+
+/* Body font + page background */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  background: var(--page-bg);  /* light pink page background */
+  color: var(--text);
+}
+
+/* Header + Footer (same class) */
+.bar.header-footer {
+  background: var(--bar-bg);  /* light purple header */
+  color: #3b0764;
+  text-align: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--pink-border); /* pink border pops */
+}
+
+/* Footer override: soft light green */
+footer.bar.header-footer {
+  background: var(--footer-green); /* light green footer */
+  border-color: var(--pink-border); /* pink border stays */
+}
+
+.bar.header-footer h1,
+.bar.header-footer p {
+  margin: 0;
+}
+
+/* Nav bar */
+.topnav {
+  background: var(--nav-bg);
+  margin: 0 16px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--pink-border); /* pink border on nav */
+}
+.topnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 14px;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+}
+.topnav a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 700;
+}
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* Body row: main + sidebar */
+.content-row {
+  display: flex;
+  gap: 16px;
+  margin: 0 16px 24px;
+}
+
+/* Main content: light yellow box */
+.main {
+  width: 68%;
+  background: var(--main-bg);
+  padding: 16px;
+  margin: 0;
+  border: 2px solid var(--main-border);
+  border-radius: 10px;
+}
+.main h2 {
+  margin-top: 0;
+}
+
+/* Sidebar: purple box with pink border */
+.sidebar {
+  width: 32%;
+  background: var(--sidebar-bg);
+  padding: 16px;
+  border: 2px solid var(--pink-border);
+  border-radius: 10px;
+  transition: background-color 0.25s ease;
+}
+.sidebar:hover {
+  background: var(--sidebar-hover);
+}
+
+/* Form layout */
+.rps-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px 12px;
+  max-width: 420px;
+}
+.rps-form label {
+  font-weight: 700;
+}
+.rps-form input[type="text"],
+.rps-form select {
+  padding: 6px 8px;
+  border: 1px solid var(--pink-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Focus animation: name input grows on focus */
+#name {
+  width: 160px;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+}
+#name:focus {
+  width: 260px;
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.3); /* pink glow */
+}
+
+/* Submit button */
+.rps-form button {
+  grid-column: 1 / -1;
+  width: max-content;
+  padding: 8px 12px;
+  background: var(--pink-border);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.rps-form button:hover {
+  background: #f43f5e; /* darker pink hover */
+}
